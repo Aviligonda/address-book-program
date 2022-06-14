@@ -9,7 +9,7 @@ public class AddressBookClass {
     public static void main(String[] args) {
         System.out.println("Welcome to AddressBook System Program");
         while (true) {
-            System.out.println("Select the options \n1.Add contact\n2.Edit contact");
+            System.out.println("Select the options \n1.Add contact\n2.Edit contact\n3.Delete contact");
             int options = scanner.nextInt();
             switch (options) {
                 case 1:
@@ -18,10 +18,14 @@ public class AddressBookClass {
                 case 2:
                     editContacts();
                     break;
+                case 3:
+                    deleteContact();
+                    break;
+                default:
+                    System.out.println("Select correct option");
             }
         }
     }
-
             public static void addContact () {
                 System.out.println("create contact ");
                 addressBook.setFirstName(scanner.nextLine());
@@ -110,4 +114,21 @@ public class AddressBookClass {
                     }
                 }
             }
+
+    public static void deleteContact() {
+        System.out.println("Enter first or last name to Delete contact");
+        String confirmName = scanner.next();
+        for (int i = 0; i < contact.size(); i++) {
+            if (contact.get(i).getFirstName().equals(confirmName) || contact.get(i).getLastName().equals(confirmName)) {
+                Contacts person = contact.get(i);
+                contact.remove(person);
+                System.out.println("Contact delete successfully");
+            } else {
+                System.out.println("contact not found in book");
+            }
+
+            System.out.println(contact);
+        }
+    }
+
         }
