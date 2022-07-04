@@ -5,13 +5,13 @@ public class Contacts {
     private String city;
     private String state;
     private String email;
-    private int zip;
-    private int phoneNum;
+    private String zip;
+    private String  phoneNum;
 
     public Contacts() {
     }
 
-    public Contacts(String firstName, String lastName, String address, String city, String state, String email, int zip, int phoneNum) {
+    public Contacts(String firstName, String lastName, String address, String city, String state, String email, String zip, String phoneNum) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -70,19 +70,19 @@ public class Contacts {
         this.email = email;
     }
 
-    public int getZip() {
+    public String getZip() {
         return zip;
     }
 
-    public void setZip(int zip) {
+    public void setZip(String zip) {
         this.zip = zip;
     }
 
-    public int getPhoneNum() {
+    public String getPhoneNum() {
         return phoneNum;
     }
 
-    public void setPhoneNum(int phoneNum) {
+    public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
 
